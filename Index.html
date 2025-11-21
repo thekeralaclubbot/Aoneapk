@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A One APK - Download Mods</title>
+    <style>
+        /* General Styling and Background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* Light grey background for contrast */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Header and Search Bar */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background-color: #007bff; /* Placeholder blue */
+            border-radius: 8px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        .search-bar {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: transparent;
+            border: none;
+            padding: 0 15px;
+            cursor: pointer;
+            color: #555;
+            font-size: 18px;
+        }
+        
+        /* APK Card Styling (Full White Color with Box Shadow) */
+        .apk-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .apk-card {
+            background-color: white; /* Full white color */
+            padding: 20px;
+            border-radius: 12px;
+            /* Box Shadow */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            /* To control visibility via JS */
+            display: flex;
+        }
+        
+        /* Hide card when search doesn't match */
+        .apk-card.hidden {
+            display: none;
+        }
+
+        .apk-logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: #f0f0f0; /* Light grey for logo box */
+            border-radius: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+
+        .apk-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Download Button Styling and Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
+        }
+
+        .download-button {
+            background-color: #28a745; /* Green color for download */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none; /* Make it look like a button but act as a link */
+            /* Add animation */
+            animation: pulse 2s infinite; 
+        }
+
+        .download-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: none; /* Pause pulse on hover for better click feeling */
+        }
+        
+        /* Simple Download Icon (Using a Unicode character) */
+        .download-icon {
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-title">
+                <div class="logo-placeholder">L</div> <h1>A One APK</h1>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="apkSearchInput" placeholder="Search apk..." onkeyup="filterAPKs()">
+                <button aria-label="Search">🔍</button>
+            </div>
+        </header>
+
+        <main class="apk-list" id="apkList">
+            
+            <div class="apk-card">
+                <div class="apk-logo-placeholder">
+                    [Hotel Icon]
+                </div>
+                
+                <div class="apk-name">
+                    Hotel Empire Tycoon (mod, Unlimited money)
+                </div>
+                
+                <a href="Hotel Empire Tycoon (mod, Unlimited money ).apk" class="download-button" download>
+                    <span class="download-icon">↓</span>
+                    Download
+                </a>
+            </div>
+
+            <div class="apk-card">
+                <div class="apk-logo-placeholder">
+                    [Hill Icon]
+                </div>
+                
+                <div class="apk-name">
+                    Hill Cluib (mod,Unlimited money)
+                </div>
+                
+                <a href="Hill Cluib (mod,Unlimited money ).apk" class="download-button" download>
+                    <span class="download-icon">↓</span>
+                    Download
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        /**
+         * Filters the list of APK cards based on the search input value.
+         */
+        function filterAPKs() {
+            // 1. Get the current search text, convert to lowercase for case-insensitive search
+            const input = document.getElementById('apkSearchInput');
+            const filter = input.value.toLowerCase();
+            
+            // 2. Get all the APK card elements
+            const apkCards = document.getElementsByClassName('apk-card');
+
+            // 3. Loop through all cards and check if their name matches the search filter
+            for (let i = 0; i < apkCards.length; i++) {
+                const card = apkCards[i];
+                // Get the text content of the APK name element inside the card
+                const apkName = card.querySelector('.apk-name').textContent;
+                
+                // Check if the APK name (lowercase) includes the search filter (lowercase)
+                if (apkName.toLowerCase().includes(filter)) {
+                    // Show the card if it matches
+                    card.classList.remove('hidden');
+                } else {
+                    // Hide the card if it doesn't match
+                    card.classList.add('hidden');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
